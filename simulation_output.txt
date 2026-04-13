@@ -1,0 +1,54 @@
+
+==========================================================================================
+PROBLEM 1 - NIGERIAN COMMERCIAL BANK QUEUE (M/M/1 vs M/M/2)
+==========================================================================================
+Simulation duration: 8.0 hours
+Arrival rate (lambda): 15.0 customers/hour
+Service rate (mu): 20.0 customers/hour per teller
+
+Metric                           1 Teller (M/M/1)         2 Tellers (M/M/2)
+------------------------------------------------------------------------------
+Average waiting time (minutes)       10.528                   0.569
+Server utilization (%)                86.11                   43.06
+Average queue length                  2.873                   0.155
+Customers served                        131                     131
+Graph saved: figures\problem1_queue_length_vs_time.png
+
+==========================================================================================
+PROBLEM 2 - HOSPITAL ER (PRIORITY vs FIFO vs LIFO)
+==========================================================================================
+Simulation duration per replication: 8.0 hours
+Arrival rate (lambda): 10.0 patients/hour
+Service rate (mu): 12.0 patients/hour
+Emergency proportion: 30%
+Replications per strategy: 50
+
+Strategy    Emergency Wait (min)      Normal Wait (min)         Overall Wait (min)
+--------------------------------------------------------------------------------------
+PRIORITY      5.02 +/- 2.30           20.42 +/- 12.77          15.38 +/- 8.36    
+FIFO         15.10 +/- 9.57           16.07 +/- 10.94          15.78 +/- 10.44   
+LIFO         21.30 +/- 20.50          19.12 +/- 16.27          19.86 +/- 15.32   
+Graphs saved: figures\problem2_waiting_time_grouped_bar.png
+Graphs saved: figures\problem2_waiting_time_boxplot.png
+
+==========================================================================================
+PROBLEM 3 - NIGERIAN FINTECH APP REQUEST QUEUE
+==========================================================================================
+Simulation duration: 60 seconds
+Service rate (mu): 120 requests/second per server
+
+Scenario                              Avg Response (ms)   Avg Queue Size   Max Queue   Utilization (%)
+-------------------------------------------------------------------------------------------------------
+Baseline (100 rps, 1 server)              40.526             3.192          21           80.50
+Spike (100->150->100 rps, 1 server)     1834.696           214.351         576           96.27
+Spike (100->150->100 rps, 2 servers)      11.258             0.353          13           48.43
+
+Spike-window response time (20s-40s): single server = 2467.618 ms, two servers = 12.773 ms
+Graph saved: figures\problem3_queue_size_over_time.png
+Graph saved: figures\problem3_response_time_comparison.png
+Scaling strategy demonstrated: increasing from 1 to 2 servers during high traffic substantially reduces queue buildup and response time under spike load.
+
+==========================================================================================
+ALL SIMULATIONS COMPLETED
+==========================================================================================
+All generated graphs are in: C:\Users\Michael\modelling\figures
